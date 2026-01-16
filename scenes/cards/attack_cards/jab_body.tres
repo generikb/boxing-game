@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://dxwowln58hfyj"]
+
+[ext_resource type="Script" uid="uid://f1fth3rdpo1u" path="res://scenes/cards/scripts/card.gd" id="1_kgrie"]
+
+[resource]
+script = ExtResource("1_kgrie")
+card_type = 0
+card_target = 1
+name = "Jab"
+boxer_health_damage = 0
+boxer_stamina_damage = 2
+enemy_health_damage = 2
+enemy_stamina_damage = 5
+metadata/_custom_type_script = "uid://f1fth3rdpo1u"

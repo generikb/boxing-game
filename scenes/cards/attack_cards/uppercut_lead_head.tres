@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://dw64gio3xcxks"]
+
+[ext_resource type="Script" uid="uid://f1fth3rdpo1u" path="res://scenes/cards/scripts/card.gd" id="1_18ns5"]
+
+[resource]
+script = ExtResource("1_18ns5")
+card_type = 4
+card_target = 0
+name = "Uppercut"
+boxer_health_damage = 0
+boxer_stamina_damage = 3
+enemy_health_damage = 5
+enemy_stamina_damage = 0
+metadata/_custom_type_script = "uid://f1fth3rdpo1u"

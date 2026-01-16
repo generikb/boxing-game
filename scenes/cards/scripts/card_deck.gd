@@ -1,0 +1,21 @@
+class_name CardDeck
+extends Resource
+
+@export var cards : Array[Card] = []
+
+
+func empty() -> bool:
+	return cards.is_empty()
+
+func draw_card() -> Card:
+	var card = cards.pop_front()
+	return card
+
+func add_card(card: Card) -> void:
+	cards.append(card)
+
+func shuffle() -> void:
+	cards.shuffle()
+
+func clear() -> void:
+	cards.clear()

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardDeck" load_steps=11 format=3 uid="uid://byiecwxc283ay"]
+
+[ext_resource type="Script" uid="uid://f1fth3rdpo1u" path="res://scenes/cards/scripts/card.gd" id="1_svx01"]
+[ext_resource type="Resource" uid="uid://bxgnmotei7fkq" path="res://scenes/cards/defense_cards/block_body.tres" id="2_wk7bu"]
+[ext_resource type="Script" uid="uid://cyuhs2rsq8t76" path="res://scenes/cards/scripts/card_deck.gd" id="2_yh0j5"]
+[ext_resource type="Resource" uid="uid://qgwnmv1r104q" path="res://scenes/cards/defense_cards/block_head.tres" id="3_48lja"]
+[ext_resource type="Resource" uid="uid://l45rkwgn5rfv" path="res://scenes/cards/attack_cards/jab_head.tres" id="4_fc7cf"]
+[ext_resource type="Resource" uid="uid://dxwowln58hfyj" path="res://scenes/cards/attack_cards/jab_body.tres" id="5_0s6qw"]
+[ext_resource type="Resource" uid="uid://cske51et0ick" path="res://scenes/cards/attack_cards/cross_head.tres" id="6_k4txu"]
+[ext_resource type="Resource" uid="uid://d3irv2mhwa3m5" path="res://scenes/cards/attack_cards/cross_body.tres" id="7_0j8hf"]
+[ext_resource type="Resource" uid="uid://bgbvn2fyfo7ee" path="res://scenes/cards/attack_cards/hook_lead_head.tres" id="8_8lkem"]
+[ext_resource type="Resource" uid="uid://pk70pqa2kcoy" path="res://scenes/cards/attack_cards/hook_lead_body.tres" id="9_eu84w"]
+
+[resource]
+script = ExtResource("2_yh0j5")
+cards = Array[ExtResource("1_svx01")]([ExtResource("2_wk7bu"), ExtResource("2_wk7bu"), ExtResource("3_48lja"), ExtResource("3_48lja"), ExtResource("4_fc7cf"), ExtResource("5_0s6qw"), ExtResource("6_k4txu"), ExtResource("7_0j8hf"), ExtResource("8_8lkem"), ExtResource("9_eu84w")])
+metadata/_custom_type_script = "uid://cyuhs2rsq8t76"

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://duqthfuugquvq"]
+
+[ext_resource type="Script" uid="uid://hmlcj6mkgsex" path="res://scenes/fight_scene/scripts/hand.gd" id="1_7xtjf"]
+
+[node name="Hand" type="HBoxContainer"]
+offset_left = 270.0
+offset_top = 649.0
+offset_right = 994.0
+offset_bottom = 799.0
+theme_override_constants/separation = -20
+alignment = 1
+script = ExtResource("1_7xtjf")

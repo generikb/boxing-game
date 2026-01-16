@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://ds05sawg2i0b2"]
+
+[ext_resource type="Script" uid="uid://f1fth3rdpo1u" path="res://scenes/cards/scripts/card.gd" id="1_xgfgy"]
+
+[resource]
+script = ExtResource("1_xgfgy")
+card_type = 3
+card_target = 1
+name = "Hook"
+boxer_health_damage = 0
+boxer_stamina_damage = 2
+enemy_health_damage = 2
+enemy_stamina_damage = 5
+metadata/_custom_type_script = "uid://f1fth3rdpo1u"

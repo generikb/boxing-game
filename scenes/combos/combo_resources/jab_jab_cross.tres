@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Combo" load_steps=2 format=3 uid="uid://cds8sv7b4biyc"]
+
+[ext_resource type="Script" uid="uid://j8v0l118h5ju" path="res://scenes/combos/scripts/combo.gd" id="1_yi8hk"]
+
+[resource]
+script = ExtResource("1_yi8hk")
+combo_card_list = Array[int]([6, 6, 7])
+name = "The old Jab Jab Cross"
+metadata/_custom_type_script = "uid://j8v0l118h5ju"

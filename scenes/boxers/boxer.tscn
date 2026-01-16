@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpju8pieriadi"]
+
+[ext_resource type="Script" uid="uid://dbhtywfjomut5" path="res://scenes/boxers/scripts/boxer.gd" id="1_c6jrr"]
+
+[node name="Boxer" type="Node2D"]
+script = ExtResource("1_c6jrr")

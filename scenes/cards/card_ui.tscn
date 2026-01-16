@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://bonuon1dkgihk"]
+
+[ext_resource type="Script" uid="uid://dibvdsy1xwqwf" path="res://scenes/cards/scripts/card_ui.gd" id="1_eq0vs"]
+[ext_resource type="Resource" uid="uid://ds05sawg2i0b2" path="res://scenes/cards/attack_cards/hook_rear_body.tres" id="2_gb70w"]
+[ext_resource type="Script" uid="uid://dlxsv6toswcuy" path="res://scenes/cards/card_states/card_state_machine.gd" id="3_oa0ou"]
+[ext_resource type="Script" uid="uid://cu3e7qflbwt51" path="res://scenes/cards/card_states/card_in_hand_state.gd" id="4_ttkbu"]
+[ext_resource type="Script" uid="uid://b8as5hqd2xvsq" path="res://scenes/cards/card_states/card_clicked_state.gd" id="5_37iqo"]
+[ext_resource type="Script" uid="uid://d08hs7scks7io" path="res://scenes/cards/card_states/card_dragging_state.gd" id="6_s5ng1"]
+[ext_resource type="Script" uid="uid://bd6rclxp117o2" path="res://scenes/cards/card_states/card_released_state.gd" id="7_bn1a1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eq0vs"]
+bg_color = Color(0.206304, 0.510736, 0.457866, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0990482, 0.352947, 0.278389, 1)
+
+[node name="CardUI" type="Control"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1180.0
+offset_bottom = -570.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eq0vs")
+card = ExtResource("2_gb70w")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 150.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eq0vs")
+
+[node name="CardNameLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 15.0
+offset_top = 5.0
+offset_right = 86.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 12
+text = "CARD NAME"
+horizontal_alignment = 1
+
+[node name="CardTypeLabel" type="Label" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 0
+offset_left = 11.0
+offset_top = 51.0
+offset_right = 91.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 12
+text = "TYPE"
+horizontal_alignment = 1
+
+[node name="CardTargetLabel" type="Label" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 0
+offset_left = 11.0
+offset_top = 66.0
+offset_right = 91.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 12
+text = "TARGET"
+horizontal_alignment = 1
+
+[node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_oa0ou")
+initial_state = NodePath("CardBaseState")
+
+[node name="CardBaseState" type="Node" parent="CardStateMachine"]
+script = ExtResource("4_ttkbu")
+
+[node name="CardClickedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_37iqo")
+state = 1
+
+[node name="CardDraggingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("6_s5ng1")
+state = 2
+
+[node name="CardReleasedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("7_bn1a1")
+state = 3
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

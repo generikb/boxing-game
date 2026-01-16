@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cws84vck76vso"]
+
+[ext_resource type="Script" uid="uid://cebpmulvfds2r" path="res://scenes/fight_scene/scripts/play_queue.gd" id="1_sc1pd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sc1pd"]
+bg_color = Color(0.619321, 0.179356, 0.435115, 1)
+
+[node name="PlayQueue" type="HBoxContainer"]
+custom_minimum_size = Vector2(500, 150)
+offset_left = 365.0
+offset_top = 275.0
+offset_right = 865.0
+offset_bottom = 425.0
+theme_override_constants/separation = 5
+script = ExtResource("1_sc1pd")
+
+[node name="CardSpacer" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sc1pd")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

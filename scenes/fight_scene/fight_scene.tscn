@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://di370opn1sg3q"]
+
+[ext_resource type="Script" uid="uid://fxhawkw01y27" path="res://scenes/fight_scene/scripts/fight_scene.gd" id="1_6drue"]
+[ext_resource type="Resource" uid="uid://c51txm2e6rid1" path="res://scenes/boxers/ricky/boxer_ricky.tres" id="2_885g1"]
+[ext_resource type="PackedScene" uid="uid://duqthfuugquvq" path="res://scenes/fight_scene/hand.tscn" id="2_pf6vi"]
+[ext_resource type="PackedScene" uid="uid://dpju8pieriadi" path="res://scenes/boxers/boxer.tscn" id="3_885g1"]
+[ext_resource type="PackedScene" uid="uid://7r3i5mcudx1o" path="res://scenes/fight_scene/combat_manager.tscn" id="3_pxly3"]
+[ext_resource type="Resource" uid="uid://b1oiisc36br52" path="res://scenes/enemies/ivan/enemy_ivan.tres" id="3_vp5g2"]
+[ext_resource type="PackedScene" uid="uid://cws84vck76vso" path="res://scenes/fight_scene/play_queue.tscn" id="4_ayqed"]
+[ext_resource type="PackedScene" uid="uid://dj53vgtk4xu04" path="res://scenes/enemies/enemy.tscn" id="4_gnakn"]
+[ext_resource type="PackedScene" uid="uid://dl4i50quhlru5" path="res://scenes/fight_scene/player_enemy_stats_hud.tscn" id="5_3g10t"]
+[ext_resource type="PackedScene" uid="uid://b5gtpt4lmixm1" path="res://scenes/fight_scene/turn_manager.tscn" id="6_a5mk7"]
+
+[node name="FightScene" type="Node2D"]
+script = ExtResource("1_6drue")
+boxer_stats = ExtResource("2_885g1")
+enemy_stats = ExtResource("3_vp5g2")
+
+[node name="Boxer" parent="." instance=ExtResource("3_885g1")]
+
+[node name="Enemy" parent="." instance=ExtResource("4_gnakn")]
+
+[node name="TurnManager" parent="." node_paths=PackedStringArray("boxer", "hand", "play_queue", "player_enemy_stats_hud") instance=ExtResource("6_a5mk7")]
+boxer = NodePath("../Boxer")
+hand = NodePath("../FightUI/Hand")
+play_queue = NodePath("../FightUI/PlayQueueArea/PlayQueue")
+player_enemy_stats_hud = NodePath("../FightUI/PlayerEnemyStatsHud")
+
+[node name="CombatManager" parent="." node_paths=PackedStringArray("stats_hud", "play_queue", "boxer", "enemy") instance=ExtResource("3_pxly3")]
+stats_hud = NodePath("../FightUI/PlayerEnemyStatsHud")
+play_queue = NodePath("../FightUI/PlayQueueArea/PlayQueue")
+boxer = NodePath("../Boxer")
+enemy = NodePath("../Enemy")
+
+[node name="FightUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+
+[node name="DebugDrawCards" type="Button" parent="FightUI"]
+unique_name_in_owner = true
+offset_left = 23.0
+offset_top = 628.0
+offset_right = 135.0
+offset_bottom = 659.0
+text = "DRAW CARDS"
+
+[node name="DebugRedrawCards" type="Button" parent="FightUI"]
+unique_name_in_owner = true
+offset_left = 23.0
+offset_top = 668.0
+offset_right = 135.0
+offset_bottom = 699.0
+text = "REDRAW CARDS"
+
+[node name="EndTurnButton" type="Button" parent="FightUI"]
+unique_name_in_owner = true
+offset_left = 946.0
+offset_top = 332.0
+offset_right = 1036.0
+offset_bottom = 363.0
+text = "END TURN"
+
+[node name="Hand" parent="FightUI" instance=ExtResource("2_pf6vi")]
+unique_name_in_owner = true
+
+[node name="PlayQueueArea" type="PanelContainer" parent="FightUI"]
+offset_left = 365.0
+offset_top = 275.0
+offset_right = 865.0
+offset_bottom = 425.0
+
+[node name="PlayQueue" parent="FightUI/PlayQueueArea" node_paths=PackedStringArray("boxer") instance=ExtResource("4_ayqed")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+boxer = NodePath("../../../Boxer")
+
+[node name="PlayerEnemyStatsHud" parent="FightUI" node_paths=PackedStringArray("boxer", "enemy") instance=ExtResource("5_3g10t")]
+unique_name_in_owner = true
+boxer = NodePath("../../Boxer")
+enemy = NodePath("../../Enemy")
+
+[connection signal="pressed" from="FightUI/DebugDrawCards" to="." method="_on_debug_draw_cards_pressed"]
+[connection signal="pressed" from="FightUI/DebugRedrawCards" to="." method="_on_debug_redraw_cards_pressed"]
+[connection signal="pressed" from="FightUI/EndTurnButton" to="." method="_on_end_turn_button_pressed"]
