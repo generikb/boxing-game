@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Token" load_steps=2 format=3 uid="uid://d2mjw1a0up8hy"]
+
+[ext_resource type="Script" uid="uid://cxptkouwolvky" path="res://scenes/tokens/scripts/token.gd" id="1_mylsk"]
+
+[resource]
+script = ExtResource("1_mylsk")
+name = "Critical Hit"
+type = 1
+metadata/_custom_type_script = "uid://cxptkouwolvky"

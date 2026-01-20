@@ -62,14 +62,14 @@ func place_card(card_ui : CardUI) -> void:
 		hand.move_child.call_deferred(card_ui, card_ui.original_index)
 	
 	# "Preview Play" all cards in Play Queue Area (needs polish)
-	play_queue.check_for_valid_combo.call_deferred()
+	play_queue.check_for_valid_combo()
 	var cards_in_play = play_queue.get_cards_in_play()
 	combat_manager.play_cards(cards_in_play, true)
 
 
 func _on_end_turn_button_pressed() -> void:
 	# "Actual Play" all cards in Play Queue Area (needs polish)
-	play_queue.check_for_valid_combo.call_deferred()
+	play_queue.check_for_valid_combo()
 	var cards_in_play = play_queue.get_cards_in_play()
 	await combat_manager.play_cards(cards_in_play, false)
 	turn_manager.discard_cards()

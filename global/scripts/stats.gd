@@ -36,17 +36,11 @@ func set_preview_stamina(value : int) -> void:
 	preview_stamina = clampi(value, 0, max_stamina)
 	stats_changed.emit()
 
-# might need to add when you add the preview stuff
-#func reset_boxer_preview() -> void:
-	#preview_health = health
-	#preview_stamina = stamina
-
 
 func take_health_damage(damage : int) -> void:
 	if damage <= 0:
 		return
 	#TODO: Add some logic regarding blocks/dodges/etc tokens
-	#self.health -= damage (temp disabling, because I think I update preview first)
 	self.preview_health -= damage
 	print("current health is: ", self.preview_health)
 

@@ -9,7 +9,6 @@ enum ComboCardType {ANY_HEAD_SHOT, ANY_BODY_SHOT, ANY_STRAIGHT, ANY_HOOK, ANY_UP
 @export_group("Combo Visuals")
 @export var name : String
 
-
 # checks the cards in the play area to see if any match this combo
 func is_combo_valid(cards : Array[CardUI]) -> CardUI:
 	var combo_check_index : int = 0 # keeping track of which combo card type we're checking
@@ -91,3 +90,5 @@ func is_card_valid(card : Card, combo_card_type : ComboCardType) -> bool:
 			print("combo card didn't match, but this shouldn't happen")
 			return false
 			
+func apply_combo_effects(_boxer : Boxer, _enemy : Enemy) -> void:
+	pass

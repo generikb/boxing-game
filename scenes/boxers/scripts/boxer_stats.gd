@@ -4,6 +4,7 @@ extends Stats
 
 @export var starting_deck : CardDeck
 @export var combos_learned : Array[Combo]
+@export var tokens : Array[Token]
 
 
 var deck : CardDeck

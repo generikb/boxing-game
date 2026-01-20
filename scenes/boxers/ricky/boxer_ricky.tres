@@ -1,15 +1,18 @@
-[gd_resource type="Resource" script_class="BoxerStats" load_steps=6 format=3 uid="uid://c51txm2e6rid1"]
+[gd_resource type="Resource" script_class="BoxerStats" load_steps=8 format=3 uid="uid://c51txm2e6rid1"]
 
 [ext_resource type="Script" uid="uid://j8v0l118h5ju" path="res://scenes/combos/scripts/combo.gd" id="1_sdjv3"]
 [ext_resource type="Script" uid="uid://bfi4abroryjjj" path="res://scenes/boxers/scripts/boxer_stats.gd" id="2_clh1h"]
 [ext_resource type="Resource" uid="uid://cds8sv7b4biyc" path="res://scenes/combos/combo_resources/jab_jab_cross.tres" id="2_eo3jj"]
 [ext_resource type="Resource" uid="uid://orf68c2aqbsb" path="res://scenes/combos/combo_resources/working_the_body.tres" id="3_0unhp"]
 [ext_resource type="Resource" uid="uid://byiecwxc283ay" path="res://scenes/boxers/ricky/ricky_starting_deck.tres" id="4_0unhp"]
+[ext_resource type="Script" uid="uid://cxptkouwolvky" path="res://scenes/tokens/scripts/token.gd" id="6_3lwic"]
+[ext_resource type="Resource" uid="uid://d2mjw1a0up8hy" path="res://scenes/tokens/token_resources/token_crit.tres" id="7_mgcvw"]
 
 [resource]
 script = ExtResource("2_clh1h")
 starting_deck = ExtResource("4_0unhp")
 combos_learned = Array[ExtResource("1_sdjv3")]([ExtResource("2_eo3jj"), ExtResource("3_0unhp")])
+tokens = Array[ExtResource("6_3lwic")]([ExtResource("7_mgcvw")])
 name = "Ricky"
 max_health = 100
 max_stamina = 100

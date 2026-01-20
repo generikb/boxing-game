@@ -3,7 +3,7 @@ extends Effect
 
 var amount : int = 0
 
-func execute_effect(target) -> void:
+func execute_effect(target, attacker) -> void:
 	if target is Boxer or target is Enemy:
 		print("A Stamina Hit to ", target)
 		target.take_stamina_damage(amount)

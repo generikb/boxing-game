@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Combo" load_steps=2 format=3 uid="uid://orf68c2aqbsb"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://orf68c2aqbsb"]
 
-[ext_resource type="Script" uid="uid://j8v0l118h5ju" path="res://scenes/combos/scripts/combo.gd" id="1_atv8j"]
+[ext_resource type="Script" uid="uid://c5hodkbdb3std" path="res://scenes/combos/scripts/working_the_body.gd" id="1_atv8j"]
 
 [resource]
 script = ExtResource("1_atv8j")
